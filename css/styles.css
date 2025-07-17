@@ -18,8 +18,8 @@ footer {
 }
 
 #layout {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  /* display: grid;
+  grid-template-rows: auto auto auto; */
   height: 100vh;
   gap: 5px;
   padding: 0.1rem;
@@ -45,6 +45,18 @@ footer {
   border: 1px solid #339;
 }
 
+.card-status {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+
+.card-status h3 {
+  border: 2px dashed goldenrod;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
 .screen {
   display: grid;
   grid-template-columns: repeat(4, 100px);
@@ -54,7 +66,19 @@ footer {
   gap: 10px;
 }
 
-.screen1 {
+.screen div {
+  border: 1px solid darkmagenta;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* OTHERS */
+
+/* .screen1 {
   grid-column: 1/2;
   grid-row: 1/2;
 }
@@ -132,14 +156,4 @@ footer {
 .screen16 {
   grid-column: 4/5;
   grid-row: 4/5;
-}
-
-.screen div {
-  border: 1px solid darkmagenta;
-}
-
-.d-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+} */
