@@ -1,14 +1,24 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 header,
 main,
 footer {
   padding: 0.1rem;
   margin: 0.1rem;
-  border: 1px solid blue;
+}
+
+header,
+footer {
+  background: #ddd;
 }
 
 #layout {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
   gap: 5px;
@@ -16,11 +26,26 @@ footer {
   border: 1px solid red;
 }
 
+#memory-game {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 3fr 10fr;
+  gap: 10px;
+}
+
+.card {
+  background: #cce;
+  padding: 20px;
+  border: 1px solid #339;
+}
+
 .screen {
   display: grid;
-  grid-template-columns: repeat(4, 80px);
-  grid-template-rows: repeat(4, 80px);
-  width: 320px;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(4, 200px);
+  width: 600px;
+  height: 800px;
+  gap: 20px;
 }
 
 .screen1 {
