@@ -1,0 +1,114 @@
+header,
+main,
+footer {
+  padding: 0.1rem;
+  margin: 0.1rem;
+  border: 1px solid blue;
+}
+
+#layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  gap: 5px;
+  padding: 0.1rem;
+  border: 1px solid red;
+}
+
+.screen {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  width: 320px;
+}
+
+.screen1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.screen2 {
+  grid-column: 3/2;
+  grid-row: 1/2;
+}
+
+.screen3 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.screen4 {
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+
+.screen5 {
+  grid-column: 1/2;
+  grid-row: 3/2;
+}
+
+.screen6 {
+  grid-column: 2/3;
+  grid-row: 3/2;
+}
+
+.screen7 {
+  grid-column: 4/3;
+  grid-row: 3/2;
+}
+
+.screen8 {
+  grid-column: 5/4;
+  grid-row: 3/2;
+}
+
+.screen9 {
+  grid-column: 1/2;
+  grid-row: 4/3;
+}
+
+.screen10 {
+  grid-column: 2/3;
+  grid-row: 4/3;
+}
+
+.screen11 {
+  grid-column: 3/4;
+  grid-row: 4/3;
+}
+
+.screen12 {
+  grid-column: 4/5;
+  grid-row: 4/3;
+}
+
+.screen13 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.screen14 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.screen15 {
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+
+.screen16 {
+  grid-column: 4/5;
+  grid-row: 4/5;
+}
+
+.screen div {
+  border: 1px solid green;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
