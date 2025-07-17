@@ -29,7 +29,13 @@ footer {
 #memory-game {
   display: grid;
   height: 100%;
-  grid-template-columns: 3fr 10fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+}
+
+#user-data {
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 10px;
 }
 
@@ -41,11 +47,11 @@ footer {
 
 .screen {
   display: grid;
-  grid-template-columns: repeat(4, 150px);
-  grid-template-rows: repeat(4, 200px);
-  width: 600px;
-  height: 800px;
-  gap: 20px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 150px);
+  width: 430px;
+  height: 630px;
+  gap: 10px;
 }
 
 .screen1 {
@@ -129,7 +135,7 @@ footer {
 }
 
 .screen div {
-  border: 1px solid green;
+  border: 1px solid darkmagenta;
 }
 
 .d-flex {
