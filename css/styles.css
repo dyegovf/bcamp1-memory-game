@@ -13,10 +13,6 @@ header {
   background: #f0f2ff;
 }
 
-header h1 {
-  text-align: center;
-}
-
 main {
   flex: 3;
   background: #f0f2ff;
@@ -46,8 +42,16 @@ main {
 
 .d-flex {
   display: flex;
+}
+
+.content-center {
   justify-content: center;
   align-items: center;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 /*memory-game d-flex*/
@@ -148,9 +152,9 @@ main {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
   ...;
-}
+} */
 
 /*background body*/
 
