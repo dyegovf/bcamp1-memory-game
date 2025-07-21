@@ -9,18 +9,19 @@ body {
 }
 
 header {
-  flex: 1;
+  height: 150px;
   background: #f0f2ff;
 }
 
 main {
-  flex: 3;
+  flex: 1;
   background: #f0f2ff;
 }
 
 /*container settings*/
 
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
@@ -99,7 +100,7 @@ main {
 @media only screen and (max-width: 600px) {
   header,
   main {
-    min-width: 450px;
+    min-width: 400px;
   }
   #screen {
     display: grid;
@@ -139,7 +140,7 @@ main {
 @media only screen and (min-width: 992px) {
   header,
   main {
-    max-width: 992px;
+    max-width: 1200px;
   }
   #screen {
     display: grid;
@@ -152,9 +153,7 @@ main {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {
-  ...;
-} */
+/* @media only screen and (min-width: 1200px) {} */
 
 /*background body*/
 
