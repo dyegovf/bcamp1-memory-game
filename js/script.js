@@ -16,5 +16,8 @@ function createCards() {
     card.className = "box";
     card.style.backgroundColor = color;
     screen.appendChild(card);
+    console.log("Card", card);
   });
+  console.log("Cards created with colors:", colors);
+  console.log("Screen element:", screen);
 }
