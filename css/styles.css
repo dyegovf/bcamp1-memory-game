@@ -104,7 +104,7 @@ main {
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  border: 1px solid darkmagenta;
+  border: 10px solid darkmagenta;
 }
 
 /*Typical Device Breakpoints*/
