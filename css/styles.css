@@ -64,12 +64,6 @@ main {
   gap: 10px;
 } */
 
-.box {
-  background: #cce;
-  padding: 0;
-  border: 3px solid #339;
-}
-
 #user-data,
 #game-area {
   display: flex;
@@ -90,7 +84,26 @@ main {
   flex: 1;
 }
 
-#screen div {
+#screen {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 130px);
+  width: 380px;
+  height: 580px;
+  gap: 20px;
+}
+
+/* #screen div {
+  border: 1px solid darkmagenta;
+} */
+
+.box {
+  display: flex;
+  background: #cce;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
   border: 1px solid darkmagenta;
 }
 
@@ -102,37 +115,31 @@ main {
   main {
     min-width: 400px;
   }
-  #screen {
-    display: grid;
+  /* #screen {
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(4, 130px);
     width: 380px;
     height: 580px;
-    gap: 20px;
-  }
+  } */
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   #screen {
-    display: grid;
     grid-template-columns: repeat(4, 110px);
     grid-template-rows: repeat(4, 160px);
     width: 500px;
     height: 700px;
-    gap: 20px;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   #screen {
-    display: grid;
     grid-template-columns: repeat(4, 135px);
     grid-template-rows: repeat(4, 185px);
     width: 600px;
     height: 800px;
-    gap: 25px;
   }
 }
 
@@ -143,12 +150,10 @@ main {
     max-width: 1200px;
   }
   #screen {
-    display: grid;
     grid-template-columns: repeat(4, 150px);
     grid-template-rows: repeat(4, 200px);
     width: 675px;
     height: 875px;
-    gap: 25px;
   }
 }
 
