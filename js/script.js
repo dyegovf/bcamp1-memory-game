@@ -22,10 +22,13 @@ const pairedColors = [...colors, ...colors];
 // Each card is a div with a class of "box" and a background color set to
 
 function createCards() {
-  for (let i = 0; i < pairedColors.length; i++) {
+  const limiter = pairedColors.length;
+  for (let i = 0; i < limiter; i++) {
     const card = document.createElement("div");
     card.className = "box";
-    card.style.backgroundColor = pairedColors[i];
+    let randomNumber = Math.floor(Math.random() * pairedColors.length);
+    card.style.backgroundColor = pairedColors[randomNumber];
+    pairedColors.splice(randomNumber, 1);
     container.appendChild(card);
   }
 }
