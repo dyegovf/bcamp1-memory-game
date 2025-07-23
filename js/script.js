@@ -1,5 +1,6 @@
 function createCards() {
-  const screen = document.getElementById("screen");
+  const container = document.getElementById("screen");
+  container.innerHTML = "";
   const colors = [
     "red",
     "blue",
@@ -11,13 +12,15 @@ function createCards() {
     "cyan",
   ];
 
-  colors.forEach((color) => {
+  const pairedColors = [...colors, ...colors];
+
+  pairedColors.forEach((color) => {
     const card = document.createElement("div");
     card.className = "box";
     card.style.backgroundColor = color;
-    screen.appendChild(card);
-    console.log("Card", card);
+    container.appendChild(card);
+    console.log("Box", card);
   });
-  console.log("Cards created with colors:", colors);
-  console.log("Screen element:", screen);
+  console.log("Collors", colors);
+  console.log("Container:", container);
 }
