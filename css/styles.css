@@ -82,7 +82,6 @@ main {
   width: 350px;
   height: 350px;
   gap: 10px;
-  border: 1px solid red;
 }
 
 /*Typical Device Breakpoints*/
