@@ -1,5 +1,5 @@
 const grid = document.querySelector("#screen");
-// grid.innerHTML = "";
+grid.innerHTML = "";
 
 const colors = [
   "red",
@@ -17,7 +17,16 @@ const colors = [
 const pairedColors = [...colors, ...colors];
 
 const shuffle = (array) => {
-  return array.sort(() => 0.5 - Math.random());
+  const result = [];
+  const copy = [...array]; // preserva o original para reutilizações
+
+  while (copy.length > 0) {
+    const randomIndex = Math.floor(Math.random() * copy.length);
+    result.push(copy[randomIndex]);
+    copy.splice(randomIndex, 1);
+  }
+
+  return result;
 };
 
 const createElement = (tag, className) => {
@@ -45,6 +54,7 @@ const loadGame = () => {
     const card = createCard(color);
     grid.appendChild(card);
   });
+  console.log("Game loaded with cards:", shuffledColors);
 };
 
 loadGame();

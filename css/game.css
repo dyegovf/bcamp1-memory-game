@@ -35,6 +35,7 @@
 .back {
   background-color: blue;
   backface-visibility: hidden;
+  /* background-image: url("../img/minions/back-card.png"); */
 }
 
 .card:hover {
