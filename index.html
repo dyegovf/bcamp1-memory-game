@@ -3,32 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/game.css" />
+    <script defer src="./js/game.js"></script>
     <title>Memory-Game</title>
   </head>
   <body class="container">
-    <header class="d-flex content-center magicpattern">
-      <h1>MEMORY GAME</h1>
-    </header>
-    <main class="magicpattern">
-      <div id="memory-game">
-        <div id="user-data">
-          <h3>Dyegovf</h3>
-          <h3>Level2</h3>
-          <h3>Score-10</h3>
-          <h3>Time-0</h3>
-        </div>
-        <di id="game-area" class="d-flex content-center">          
-          <div id="screen">
-            <div class="box">
-              <div class="front"></div>
-              <div class="back"></div>
-            </div>
-          </div>
-        </div>
-        <div id="button"><button onclick="createCards()">Start</button></div>
-      </div>
+    <header></header>
+    <main>
+      <div id="screen"></div>
     </main>
-    <script src="js/script.js"></script>
   </body>
 </html>
