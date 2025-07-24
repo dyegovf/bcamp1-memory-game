@@ -24,7 +24,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 5px;
-  border: 2px solid yellowgreen;
+  /* border: 2px solid yellowgreen; */
 }
 
 .front {
@@ -33,7 +33,7 @@
 }
 
 .back {
-  /* background-image: url("../img/minions/back-card.png"); */
+  background-image: url("../img/minions/back-card.png");
   backface-visibility: hidden;
 }
 

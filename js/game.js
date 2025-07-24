@@ -16,21 +16,22 @@ const colors = [
 
 const pairedColors = [...colors, ...colors];
 
+const shuffle = (array) => {
+  return array.sort(() => 0.5 - Math.random());
+};
+
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
   element.className = className;
   return element;
 };
 
-let random = (randomNumber = Math.floor(Math.random() * pairedColors.length));
-
 const createCard = (color) => {
   const card = createElement("div", "card");
   const front = createElement("div", "face front");
   const back = createElement("div", "face back");
 
-  front.style.backgoundColor = random[color];
-  back.style.backgroundColor = "blue";
+  front.style.backgroundColor = color;
 
   card.appendChild(front);
   card.appendChild(back);
@@ -39,8 +40,9 @@ const createCard = (color) => {
 };
 
 const loadGame = () => {
-  pairedColors.forEach((color) => {
-    const card = createCard();
+  const shuffledColors = shuffle(pairedColors);
+  shuffledColors.forEach((color) => {
+    const card = createCard(color);
     grid.appendChild(card);
   });
 };
