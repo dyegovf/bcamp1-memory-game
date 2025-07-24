@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-.box {
+.card {
   position: relative;
   aspect-ratio: 3/4;
   width: 100%;
@@ -29,14 +29,14 @@
 
 .front {
   transform: rotateY(180deg);
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }
 
 .back {
-  background-image: url("../img/minions/back-card.png");
+  /* background-image: url("../img/minions/back-card.png"); */
   backface-visibility: hidden;
 }
 
-.box:hover {
+.card:hover {
   transform: rotateY(180deg);
 }
