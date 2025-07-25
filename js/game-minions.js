@@ -1,5 +1,5 @@
 const grid = document.querySelector("#screen");
-grid.innerHTML = "";
+const spanPlayer = document.querySelector(".player");
 
 const minionsImages = [
   "img1",
@@ -106,4 +106,8 @@ const loadGame = () => {
   console.log("Game loaded with cards:", shuffledImages);
 };
 
-loadGame();
+window.onload = () => {
+  const playerName = localStorage.getItem("player");
+  spanPlayer.innerHTML = playerName;
+  loadGame();
+};
