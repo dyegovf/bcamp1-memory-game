@@ -107,7 +107,7 @@ const loadGame = () => {
 };
 
 window.onload = () => {
-  const playerName = localStorage.getItem("player");
+  const playerName = localStorage.getItem("username");
   spanPlayer.innerHTML = playerName;
   loadGame();
 };
