@@ -10,8 +10,6 @@ const minionsImages = [
   "img6",
   "img7",
   "img8",
-  "img9",
-  "img10",
 ];
 
 const shuffle = (array) => {
@@ -97,8 +95,10 @@ const createCard = (item) => {
 };
 
 const loadGame = () => {
-  const doubleImages = [...minionsImages, ...minionsImages];
+  // const doubleImages = [...minionsImages, ...minionsImages];
+  const doubleImages = minionsImages.flatMap((item) => [item, item]);
   const shuffledImages = shuffle(doubleImages);
+  grid.innerHTML = "";
   shuffledImages.forEach((item) => {
     const card = createCard(item);
     grid.appendChild(card);
