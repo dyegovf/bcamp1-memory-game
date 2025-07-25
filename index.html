@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="./css/game-minions.css" />
-    <script defer src="./js/game-minions.js"></script>
-    <title>Memory-Game</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css" />
+    <script defer src="../js/login.js"></script>
+    <title>Memory-Game | Login</title>
   </head>
-  <body class="container">
-    <header>
-      <span class="player">Jogador</span>
-      <span>Tempo: <span class="timer">00</span></span>
-    </header>
-    <main>
-      <div id="screen"></div>
-    </main>
+  <body style="background-color: orange">
+    <form class="login-form">
+      <div class="login-header">
+        <img src="./img/minions/img-login2.png" alt="minions icon" />
+        <h1>Minions's Memory Game</h1>
+      </div>
+      <input type="text" placeholder="Enter your name" class="login-input" />
+      <button type="submit" class="login-button" disabled>
+        Let's play now
+      </button>
+    </form>
   </body>
 </html>
