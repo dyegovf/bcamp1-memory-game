@@ -14,7 +14,6 @@
   border-radius: 5px;
   transition: all 400ms ease;
   transform-style: preserve-3d;
-  background: #333;
 }
 
 .face {
@@ -24,6 +23,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 5px;
+
   /* border: 2px solid yellowgreen; */
 }
 
@@ -33,11 +33,15 @@
 }
 
 .back {
-  background-color: blue;
+  background-color: white;
   backface-visibility: hidden;
   /* background-image: url("../img/minions/back-card.png"); */
 }
 
-.card:hover {
+.reveal-card {
   transform: rotateY(180deg);
+}
+
+.disabled-card {
+  background-image: url("../img/winner-card2.png");
 }
