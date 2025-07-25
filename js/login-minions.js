@@ -15,8 +15,12 @@ const validateInput = ({ target }) => {
 const handleSubmit = (event) => {
   event.preventDefault();
   const username = input.value.trim();
-  localStorage.setItem("username", username);
-  window.location.href = "./page/game.html";
+  if (username.length >= 3) {
+    localStorage.setItem("username", username);
+    window.location.href = "../page/game.html";
+  } else {
+    alert("Please enter a valid username with at least 3 characters.");
+  }
 };
 
 input.addEventListener("input", validateInput);
