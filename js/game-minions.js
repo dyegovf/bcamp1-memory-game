@@ -39,7 +39,7 @@ let secondCard = "";
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll(".disabled-card");
   if (disabledCards.length == minionsImages.length * 2) {
-    console.log("Congratulations! You've matched all cards!");
+    alert("Congratulations! You've matched all cards!");
   }
 };
 

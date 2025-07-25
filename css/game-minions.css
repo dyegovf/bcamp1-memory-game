@@ -23,6 +23,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 5px;
+  transition: 400ms ease;
 
   /* border: 2px solid yellowgreen; */
 }
@@ -33,7 +34,6 @@
 }
 
 .back {
-  background-color: white;
   backface-visibility: hidden;
   background-image: url("../img/minions/back-card.png");
 }
@@ -43,5 +43,6 @@
 }
 
 .disabled-card {
-  background-image: url("../img/minions/back-card.png");
+  filter: saturate(0);
+  opacity: 0.5;
 }
