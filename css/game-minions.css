@@ -4,11 +4,12 @@ main {
   width: 100%;
   min-height: 100vh;
   background-image: url("../img/minions/bg-game2.png");
+  background-size: 30px;
   background-repeat: repeat;
   align-items: center;
   justify-content: center;
   margin: 0 0 30px;
-  padding: 60px;
+  padding: 8px;
 }
 
 header {
