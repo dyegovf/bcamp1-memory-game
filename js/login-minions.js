@@ -17,7 +17,7 @@ const handleSubmit = (event) => {
   const username = input.value.trim();
   if (username.length >= 3) {
     localStorage.setItem("username", username);
-    window.location.href = "../page/game.html";
+    window.location.href = "./page/game.html";
   } else {
     alert("Please enter a valid username with at least 3 characters.");
   }

@@ -1,5 +1,6 @@
 const grid = document.querySelector("#screen");
 const spanPlayer = document.querySelector(".player");
+const spanTimer = document.querySelector(".timer");
 
 const minionsImages = [
   "img1",
@@ -106,8 +107,25 @@ const loadGame = () => {
   console.log("Game loaded with cards:", shuffledImages);
 };
 
+let totalSeconds = 0;
+
+const startTimer = () => {
+  setInterval(() => {
+    totalSeconds++;
+
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+    spanTimer.innerHTML = formattedTime;
+    console.log("Timer updated:", formattedTime);
+  }, 1000);
+};
+
 window.onload = () => {
   const playerName = localStorage.getItem("username");
   spanPlayer.innerHTML = playerName;
+  startTimer();
   loadGame();
+  console.log("Player name set to:", playerName);
 };
