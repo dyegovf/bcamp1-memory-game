@@ -71,5 +71,5 @@ header {
 
 .disabled-card {
   filter: saturate(0);
-  opacity: 0.5;
+  opacity: 0.8;
 }
