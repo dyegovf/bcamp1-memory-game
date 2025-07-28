@@ -6,7 +6,10 @@
   list-style: none;
   border: none;
 }
-body {
+body,
+html {
+  width: 100%;
+  height: 100vh;
   font-family: "Bitcount Grid Single", system-ui;
   font-optical-sizing: auto;
   font-weight: 350;

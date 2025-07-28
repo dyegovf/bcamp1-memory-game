@@ -38,7 +38,10 @@ let secondCard = "";
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll(".disabled-card");
   if (disabledCards.length == minionsImages.length * 2) {
-    alert("Congratulations! You've matched all cards!");
+    clearInterval(this.loop);
+    alert(
+      `${spanPlayer.innerHTML}, Congratulations! You've matched all cards in ${spanTimer.innerHTML}!`
+    );
   }
 };
 
@@ -110,7 +113,7 @@ const loadGame = () => {
 let totalSeconds = 0;
 
 const startTimer = () => {
-  setInterval(() => {
+  this.loop = setInterval(() => {
     totalSeconds++;
 
     const minutes = Math.floor(totalSeconds / 60);
