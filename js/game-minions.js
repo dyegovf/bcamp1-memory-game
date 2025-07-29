@@ -121,7 +121,7 @@ const startTimer = () => {
     const formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
 
     spanTimer.innerHTML = formattedTime;
-    console.log("Timer updated:", formattedTime);
+    // console.log("Timer updated:", formattedTime);
   }, 1000);
 };
 
