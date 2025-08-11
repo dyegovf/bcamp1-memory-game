@@ -27,11 +27,25 @@ header {
 
 #screen {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   width: 100%;
   max-width: 800px;
   gap: 15px;
   margin: 0 auto;
+}
+
+#screen.easy {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+#screen.medium {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#screen.hard {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 
 .card {

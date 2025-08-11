@@ -1,6 +1,7 @@
 const input = document.querySelector(".login-input");
 const button = document.querySelector(".login-button");
 const form = document.querySelector(".login-form");
+const difficultySelect = document.querySelector("#difficulty");
 
 const validateInput = ({ target }) => {
   if (target.value.length >= 3) {
@@ -15,8 +16,11 @@ const validateInput = ({ target }) => {
 const handleSubmit = (event) => {
   event.preventDefault();
   const username = input.value.trim();
+  const difficulty = difficultySelect.value;
+
   if (username.length >= 3) {
     localStorage.setItem("username", username);
+    localStorage.setItem("difficulty", difficulty);
     window.location.href = "./page/game.html";
   } else {
     alert("Please enter a valid username with at least 3 characters.");

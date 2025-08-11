@@ -1,6 +1,7 @@
 const grid = document.querySelector("#screen");
 const spanPlayer = document.querySelector(".player");
 const spanTimer = document.querySelector(".timer");
+const difficulty = localStorage.getItem("difficulty");
 
 const minionsImages = [
   "img1",
@@ -71,7 +72,6 @@ const revealCard = ({ target }) => {
     console.log("Card already revealed");
     return;
   }
-
   if (firstCard == "") {
     target.parentNode.classList.add("reveal-card");
     firstCard = target.parentNode;
@@ -98,16 +98,33 @@ const createCard = (item) => {
   return card;
 };
 
+const getImagesByDifficulty = () => {
+  switch (difficulty) {
+    case "easy":
+      return minionsImages.slice(0, 4); // 4 pairs = 8 cards
+    case "medium":
+      return minionsImages.slice(0, 6); // 6 pairs = 12 cards
+    case "hard":
+    default:
+      return minionsImages.slice(0, 8); // 8 pairs = 16 cards
+  }
+};
+
 const loadGame = () => {
-  // const doubleImages = [...minionsImages, ...minionsImages];
-  const doubleImages = minionsImages.flatMap((item) => [item, item]);
+  const selectedImages = getImagesByDifficulty();
+  const doubleImages = selectedImages.flatMap((item) => [item, item]);
   const shuffledImages = shuffle(doubleImages);
+
   grid.innerHTML = "";
+
+  grid.className = "";
+  grid.classList.add(difficulty);
+
   shuffledImages.forEach((item) => {
     const card = createCard(item);
     grid.appendChild(card);
   });
-  console.log("Game loaded with cards:", shuffledImages);
+  console.log(`Game loaded with difficulty: ${difficulty}`);
 };
 
 let totalSeconds = 0;
