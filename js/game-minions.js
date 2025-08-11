@@ -2,6 +2,7 @@ const grid = document.querySelector("#screen");
 const spanPlayer = document.querySelector(".player");
 const spanTimer = document.querySelector(".timer");
 const difficulty = localStorage.getItem("difficulty");
+const restartButton = document.getElementById("restart-btn");
 
 const minionsImages = [
   "img1",
@@ -141,6 +142,22 @@ const startTimer = () => {
     // console.log("Timer updated:", formattedTime);
   }, 1000);
 };
+
+const restartGame = () => {
+  totalSeconds = 0;
+  spanTimer.innerHTML = "0:00";
+  clearInterval(loop);
+  startTimer();
+  firstCard = "";
+  secondCard = "";
+  loadGame();
+};
+
+restartButton.addEventListener("click", () => {
+  if (confirm("Are you sure you want to restart the game?")) {
+    restartGame();
+  }
+});
 
 window.onload = () => {
   const playerName = localStorage.getItem("username");
