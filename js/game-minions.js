@@ -102,12 +102,12 @@ const createCard = (item) => {
 const getImagesByDifficulty = () => {
   switch (difficulty) {
     case "easy":
-      return minionsImages.slice(0, 4); // 4 pairs = 8 cards
+      return minionsImages.slice(0, 4);
     case "medium":
-      return minionsImages.slice(0, 6); // 6 pairs = 12 cards
+      return minionsImages.slice(0, 6);
     case "hard":
     default:
-      return minionsImages.slice(0, 8); // 8 pairs = 16 cards
+      return minionsImages.slice(0, 8);
   }
 };
 

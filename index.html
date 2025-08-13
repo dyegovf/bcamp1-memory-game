@@ -15,14 +15,27 @@
         <h1>Minions's Memory Game</h1>
       </div>
       <input type="text" placeholder="Enter your name" class="login-input" />
-      <select id="difficulty" class="login-input">
-        <option value="easy">Easy (8 cards)</option>
-        <option value="medium">Medium (12 cards)</option>
-        <option value="hard">Hard (16 cards)</option>
-      </select>
       <button type="submit" class="login-button" disabled>
         Let's play now
       </button>
     </form>
+
+    <div id="difficulty-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Select Difficulty</h2>
+        <div class="difficulty-options">
+          <button class="difficulty-btn" data-level="easy">
+            Easy (8 cards)
+          </button>
+          <button class="difficulty-btn" data-level="medium">
+            Medium (12 cards)
+          </button>
+          <button class="difficulty-btn" data-level="hard">
+            Hard (16 cards)
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
