@@ -8,6 +8,54 @@ const difficultyButtons = document.querySelectorAll(".difficulty-btn");
 
 const config = document.getElementById("gearBtn");
 
+const section = document.querySelector(".login-section");
+
+const createElement = (tag, className) => {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+};
+
+const createForm = (item) => {
+  // const section = document.querySelector(".login-section");
+  const form = createElement("form", "login-form");
+  const header = createElement("header", "login-header");
+  const img = createElement("img");
+  img.src = "./img/minions/img-login2.png";
+  img.alt = "Minions icon";
+  const title = createElement("h1");
+  title.textContent = "Minions Memory Game";
+  const fieldset = createElement("fieldset", "form-group");
+  const input = createElement("input", "login-input");
+  const button = createElement("button", "login-button");
+
+  input.type = "text";
+  input.id = "username";
+  input.placeholder = "Enter your name";
+
+  button.type = "submit";
+  button.textContent = "Play";
+  button.disabled = true;
+
+  header.appendChild(img);
+  header.appendChild(title);
+
+  fieldset.appendChild(input);
+  fieldset.appendChild(button);
+
+  form.appendChild(header);
+  form.appendChild(fieldset);
+
+  section.appendChild(form);
+
+  // return section;
+};
+
+const loadPage = () => {
+  section.innerHTML = "";
+  section.className = "";
+};
+
 // Validate input
 const validateInput = (event) => {
   const value = event.target.value.trim();
@@ -52,6 +100,12 @@ const handleOutsideClick = (event) => {
 };
 
 // Event listeners
+
+window.onload = () => {
+  // loadPage();
+  createForm();
+  // document.body.appendChild(section);
+};
 input.addEventListener("input", validateInput);
 form.addEventListener("submit", handleSubmit);
 config.addEventListener("click", handleConfig);
