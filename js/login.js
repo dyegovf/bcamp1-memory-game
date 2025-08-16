@@ -104,13 +104,9 @@ const createModal = () => {
   return modal;
 };
 
-const restSection = () => {
+window.onload = () => {
   loginSection.innerHTML = "";
   loginSection.className = "";
-};
-
-window.onload = () => {
-  restSection();
 
   const form = createForm();
   loginSection.appendChild(form);
