@@ -1,19 +1,76 @@
+/*Variáveis de tema */
+:root {
+  --primary-color: #333;
+  --accent-color: orange;
+  --disabled-bg: #eee;
+  --disabled-text: #aaa;
+  --modal-bg: rgba(51, 51, 51, 0.8);
+  --font-color-light: #f0f0f0;
+}
+
+/*Container do Main*/
+
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+/*Seções do main*/
+
+.settings-section {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* .login-section {
+  display: flex;
+  flex: 1;
+} */
+
+/* .theme-section {
+  display: flex;
+  flex: 3;
+} */
+
+/*Formulário de login */
 .login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Container do grupo de botões do Tema*/
+
+/* .theme-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+} */
+
+/*Cabeçalho do login */
 .login-header {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-bottom: 25px;
 }
+
 .login-header img {
   width: 350px;
   height: 350px;
@@ -23,66 +80,109 @@
 
 .login-header h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--primary-color);
   margin-top: 25px;
 }
 
+/*Campo de entrada */
 .login-input {
   width: 100%;
   max-width: 300px;
-  border: 2px solid #333;
+  border: 2px solid var(--primary-color);
   border-radius: 8px;
-  color: #333;
+  color: var(--primary-color);
   font-size: 1.2rem;
   padding: 15px;
 }
 
+/*Botão de login */
 .login-button {
   width: 100%;
   max-width: 300px;
-  background-color: #333;
-  color: orange;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   font-size: 1.2rem;
   padding: 15px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .login-button:disabled {
-  background-color: #eee;
-  color: #aaa;
+  background-color: var(--disabled-bg);
+  color: var(--disabled-text);
   cursor: auto;
 }
 
+/*Botões de Temas*/
+
+/* .theme-button {
+  width: 100%;
+  max-width: 300px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+} */
+
+/*Estados visuais */
+.login-button:focus,
+.difficulty-btn:focus,
+.theme-btn:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.difficulty-btn:active,
+.theme-btn:active {
+  transform: scale(0.98);
+}
+
+/*Modal de dificuldade */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(51, 51, 51, 0.8);
+  background-color: var(--modal-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .hidden {
   display: none;
 }
 
+/*Conteúdo do modal */
 .modal-content {
-  background-color: orange;
+  background-color: var(--accent-color);
   padding: 30px;
   border-radius: 12px;
   text-align: center;
   max-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  color: #333;
+  color: var(--primary-color);
   font-size: 1.2rem;
+  position: relative;
 }
 
+/*Botão de fechar do modal*/
 .close-button {
   position: absolute;
   top: 20px;
@@ -92,6 +192,7 @@
   cursor: pointer;
 }
 
+/*Botões de dificuldade do modal*/
 .difficulty-options {
   display: flex;
   flex-direction: column;
@@ -99,17 +200,52 @@
   margin-top: 20px;
 }
 
-.difficulty-btn {
+.difficulty-btn,
+.theme-btn {
   padding: 12px 20px;
   font-size: 1.1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #333;
-  color: orange;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   transition: background-color 0.3s ease;
 }
 
-.difficulty-btn:hover {
+.difficulty-btn:hover,
+.theme-btn:hover {
   background-color: #555;
+}
+
+/*Botões de tema */
+
+/* .theme-btn {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+} */
+
+/*Responsividade*/
+@media (max-width: 480px) {
+  .login-header img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .login-header h1 {
+    font-size: 2rem;
+  }
+
+  .login-input,
+  .login-button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    font-size: 1rem;
+  }
 }

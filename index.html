@@ -5,37 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/login.css" />
-    <script defer src="./js/login-minions.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/gear-button.css" />
+    <script defer src="./js/login.js"></script>
     <title>Memory-Game | Login</title>
   </head>
   <body>
-    <form class="login-form">
-      <div class="login-header">
-        <img src="./img/minions/img-login2.png" alt="minions icon" />
-        <h1>Minions's Memory Game</h1>
-      </div>
-      <input type="text" placeholder="Enter your name" class="login-input" />
-      <button type="submit" class="login-button" disabled>
-        Let's play now
-      </button>
-    </form>
+    <main>
+      <div class="container">
+        <section class="settings-section">
+          <button id="gearBtn" class="gear-btn" title="Configurações">
+            <object
+              class="gear-icon"
+              type="image/svg+xml"
+              data="./assets/svg/gear-icon.svg"
+            ></object>
+          </button>
+        </section>
 
-    <div id="difficulty-modal" class="modal hidden">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Select Difficulty</h2>
-        <div class="difficulty-options">
-          <button class="difficulty-btn" data-level="easy">
-            Easy (8 cards)
-          </button>
-          <button class="difficulty-btn" data-level="medium">
-            Medium (12 cards)
-          </button>
-          <button class="difficulty-btn" data-level="hard">
-            Hard (16 cards)
-          </button>
-        </div>
+        <section class="login-section">
+          <form class="login-form">
+            <header class="login-header">
+              <img src="./img/minions/img-login2.png" alt="Minions icon" />
+              <h1>Minions's Memory Game</h1>
+            </header>
+
+            <fieldset class="form-group">
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter your name"
+                class="login-input"
+              />
+              <button type="submit" class="login-button" disabled>Play</button>
+            </fieldset>
+          </form>
+        </section>
+
+        <!-- <section class="theme-section">
+          <div class="theme-group">
+            <button
+              type="button"
+              class="theme-btn classic-theme"
+              title="Classic Theme"
+            >
+              Classic
+            </button>
+            <button
+              type="button"
+              class="theme-btn adventure-theme"
+              title="Adventure Theme"
+            >
+              Adventure
+            </button>
+            <button type="button" class="theme-btn 007-theme" title="007 Theme">
+              007
+            </button>
+          </div>
+        </section> -->
+
+        <section class="modal-section">
+          <div id="difficulty-modal" class="modal hidden">
+            <span class="close-button">&times;</span>
+
+            <div class="modal-content">
+              <div class="difficulty-options">
+                <header>
+                  <h2>Difficulty</h2>
+                </header>
+                <button class="difficulty-btn" data-level="easy">
+                  Easy (8 cards)
+                </button>
+                <button class="difficulty-btn" data-level="medium">
+                  Medium (12 cards)
+                </button>
+                <button class="difficulty-btn" data-level="hard">
+                  Hard (16 cards)
+                </button>
+              </div>
+              <div class="difficulty-options">
+                <header>
+                  <h2>Theme</h2>
+                </header>
+                <button class="theme-btn" data-level="classic">Classic</button>
+                <button class="theme-btn" data-level="adventure">
+                  Adventure
+                </button>
+                <button class="theme-btn" data-level="007">007</button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
   </body>
 </html>

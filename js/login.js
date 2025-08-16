@@ -6,6 +6,8 @@ const modal = document.getElementById("difficulty-modal");
 const closeButton = document.querySelector(".close-button");
 const difficultyButtons = document.querySelectorAll(".difficulty-btn");
 
+const config = document.getElementById("gearBtn");
+
 // Validate input
 const validateInput = (event) => {
   const value = event.target.value.trim();
@@ -19,7 +21,7 @@ const handleSubmit = (event) => {
 
   if (username.length >= 3) {
     localStorage.setItem("username", username);
-    modal.classList.remove("hidden");
+    // modal.classList.remove("hidden");
   } else {
     alert("Please enter a valid username with at least 3 characters.");
   }
@@ -29,7 +31,12 @@ const handleSubmit = (event) => {
 const handleDifficultySelection = (event) => {
   const level = event.target.getAttribute("data-level");
   localStorage.setItem("difficulty", level);
-  window.location.href = "./page/game.html";
+  // window.location.href = "./page/app.html";
+};
+
+// Handle Config
+const handleConfig = () => {
+  modal.classList.remove("hidden");
 };
 
 // Close modal
@@ -47,6 +54,7 @@ const handleOutsideClick = (event) => {
 // Event listeners
 input.addEventListener("input", validateInput);
 form.addEventListener("submit", handleSubmit);
+config.addEventListener("click", handleConfig);
 difficultyButtons.forEach((btn) =>
   btn.addEventListener("click", handleDifficultySelection)
 );

@@ -1,0 +1,5 @@
+[
+  { "level": "easy", "label": "Easy", "cards": 8 },
+  { "level": "medium", "label": "Medium", "cards": 12 },
+  { "level": "hard", "label": "Hard", "cards": 16 }
+]
