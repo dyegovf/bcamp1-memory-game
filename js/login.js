@@ -109,35 +109,21 @@ window.onload = () => {
   loginSection.className = "";
 
   const form = createForm();
+  const modal = createModal();
+
   loginSection.appendChild(form);
+  modalSection.appendChild(modal);
 
   const input = form.querySelector(".login-input");
   const button = form.querySelector(".login-button");
+  const closeButton = modal.querySelector(".close-button");
+  const difficultyButtons = modal.querySelectorAll(".difficulty-btn");
+  const modalButtons = modal.querySelectorAll(".theme-btn");
 
   input.addEventListener("input", (event) => {
     const value = event.target.value.trim();
     button.disabled = value.length < 3;
   });
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const username = input.value.trim();
-
-    if (username.length >= 3) {
-      localStorage.setItem("username", username);
-      // modal.classList.remove("hidden");
-    } else {
-      alert("Please enter a valid username with at least 3 characters.");
-    }
-  });
-
-  // Cria e insere o modal dentro da section estática
-  const modal = createModal();
-  modalSection.appendChild(modal);
-
-  // Agora que o modal existe, podemos registrar os eventos
-  const closeButton = modal.querySelector(".close-button");
-  const difficultyButtons = modal.querySelectorAll(".difficulty-btn");
 
   config.addEventListener("click", () => {
     modal.classList.remove("hidden");
@@ -160,4 +146,28 @@ window.onload = () => {
       // window.location.href = "./page/app.html";
     })
   );
+
+  modalButtons.forEach((btn) =>
+    btn.addEventListener("click", (event) => {
+      const theme = event.target.getAttribute("data-level");
+      localStorage.setItem("theme", theme);
+      // window.location.href = "./page/app.html";
+    })
+  );
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const username = input.value.trim();
+    // const difficulty = difficultySelect.value;
+
+    if (username.length >= 3) {
+      localStorage.setItem("username", username);
+      window.location.href = "./page/app.html";
+
+      // localStorage.setItem("difficulty", difficulty);
+      // modal.classList.remove("hidden");
+    } else {
+      alert("Please enter a valid username with at least 3 characters.");
+    }
+  });
 };
