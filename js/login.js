@@ -2,6 +2,10 @@ const loginSection = document.querySelector(".login-section");
 const modalSection = document.querySelector(".modal-section");
 const config = document.getElementById("gearBtn");
 
+const href = document.querySelector("base");
+
+console.log(href);
+
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
   if (className) element.className = className;
