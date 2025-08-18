@@ -31,12 +31,12 @@ const createElement = (tag, className) => {
 
 const applyTheme = () => {
   const main = document.querySelector("main");
-  main.style.backgroundImage = `url(../assets/memory-games/${group}/themes/${theme}/bg-game-${theme}.png)`;
+  main.style.backgroundImage = `url(assets/memory-games/${group}/themes/${theme}/bg-game-${theme}.png)`;
 
   const style = document.createElement("style");
   style.innerHTML = `
     .back {
-      background-image: url(../assets/memory-games/${group}/themes/${theme}/back-cards-${theme}.png);
+      background-image: url(assets/memory-games/${group}/themes/${theme}/back-cards-${theme}.png);
     }
   `;
   document.head.appendChild(style);
@@ -47,7 +47,7 @@ const createCard = (item) => {
   const front = createElement("div", "face front");
   const back = createElement("div", "face back");
 
-  front.style.backgroundImage = `url(../assets/memory-games/${group}/cards/${item}.png)`;
+  front.style.backgroundImage = `url(assets/memory-games/${group}/cards/${item}.png)`;
 
   card.appendChild(front);
   card.appendChild(back);
@@ -99,7 +99,7 @@ const revealCard = ({ target }) => {
 };
 
 const getImages = async () => {
-  const response = await fetch("../assets/themes.json");
+  const response = await fetch("assets/themes.json");
   const data = await response.json();
   const selectedGroup = data.groups.find((g) => g.id === group);
   const cardImages = selectedGroup?.cards || [];

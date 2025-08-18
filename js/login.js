@@ -15,7 +15,7 @@ const createForm = () => {
 
   const group = localStorage.getItem("group") || "minions";
   const theme = localStorage.getItem("theme") || "classic";
-  img.src = `../assets/memory-games/${group}/themes/${theme}/login-${theme}.png`;
+  img.src = `assets/memory-games/${group}/themes/${theme}/login-${theme}.png`;
   img.alt = "Login Theme";
 
   const title = createElement("h1");
@@ -59,7 +59,7 @@ const createModal = async () => {
   difficultyHeader.appendChild(difficultyTitle);
   difficultySection.appendChild(difficultyHeader);
 
-  const difficultyRes = await fetch("../assets/difficulty-level.json");
+  const difficultyRes = await fetch("assets/difficulty-level.json");
   const difficultyData = await difficultyRes.json();
 
   difficultyData.forEach((item) => {
@@ -83,7 +83,7 @@ const createModal = async () => {
   themeHeader.appendChild(themeTitle);
   themeSection.appendChild(themeHeader);
 
-  const themeRes = await fetch("../assets/themes.json");
+  const themeRes = await fetch("assets/themes.json");
   const themeData = await themeRes.json();
 
   themeData.groups.forEach((group) => {
@@ -98,7 +98,7 @@ const createModal = async () => {
         localStorage.setItem("theme", theme.id);
 
         const img = document.querySelector(".login-header img");
-        img.src = `../assets/memory-games/${group.id}/themes/${theme.id}/login-${theme.id}.png`;
+        img.src = `assets/memory-games/${group.id}/themes/${theme.id}/login-${theme.id}.png`;
       });
 
       themeSection.appendChild(btn);
@@ -161,7 +161,7 @@ window.onload = async () => {
         localStorage.setItem("theme", "classic");
       }
 
-      window.location.href = "./page/app.html";
+      window.location.href = "page/app.html";
     } else {
       alert("Please enter a valid username with at least 3 characters.");
     }
