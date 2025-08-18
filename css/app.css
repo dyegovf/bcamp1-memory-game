@@ -12,6 +12,115 @@ main {
   padding: 8px;
 }
 
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+}
+
+.player-info,
+.timer-info {
+  font-weight: bold;
+}
+
+#screen {
+  display: grid;
+  width: 100%;
+  max-width: 800px;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+/* Grid dinâmico baseado em número de cartas */
+#screen[data-cards="8"] {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+#screen[data-cards="12"] {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#screen[data-cards="16"] {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 3/4;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  transition: 400ms ease;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.back {
+  backface-visibility: hidden;
+  background-image: url("../img/minions/back-card.png");
+}
+
+.reveal-card {
+  transform: rotateY(180deg);
+}
+
+.disabled-card {
+  filter: saturate(0);
+  opacity: 0.8;
+}
+
+#restart-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #fdd835;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#restart-btn:hover {
+  background-color: #fbc02d;
+}
+
+/* main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../img/minions/bg-game2.png");
+  background-size: 200px;
+  background-repeat: repeat;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 30px;
+  padding: 8px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -66,12 +175,12 @@ header {
   border-radius: 5px;
   transition: 400ms ease;
 
-  /* border: 2px solid yellowgreen; */
+  border: 2px solid yellowgreen;
 }
 
 .front {
   transform: rotateY(180deg);
-  /* background-color: blueviolet; */
+  background-color: blueviolet;
 }
 
 .back {
@@ -102,4 +211,4 @@ header {
 
 #restart-btn:hover {
   background-color: #fbc02d;
-}
+} */

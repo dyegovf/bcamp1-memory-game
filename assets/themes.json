@@ -3,36 +3,30 @@
     {
       "id": "minions",
       "name": "Minions",
-      "cardsPath": "./assets/minions/cards/",
+      "cards": ["1", "2", "3", "4", "5", "6", "7", "8"],
       "themes": [
-        {
-          "id": "007",
-          "name": "007",
-          "loginImage": "./assets/minions/themes/007/img-login-007.png",
-          "backCard": "./assets/minions/themes/007/back-cards-007.jpg",
-          "gameBackground": "./assets/minions/themes/007/bg-game-007.png"
-        },
-        {
-          "id": "adventure",
-          "name": "Adventure",
-          "loginImage": "./assets/minions/themes/adventure/img-login-adventure.png",
-          "backCard": "./assets/minions/themes/adventure/back-cards-adventure.png",
-          "gameBackground": "./assets/minions/themes/adventure/bg-game-adventure.png"
-        },
-        {
-          "id": "classic",
-          "name": "Classic",
-          "loginImage": "./assets/minions/themes/classic/img-login-classic.png",
-          "backCard": "./assets/minions/themes/classic/back-cards-classic.png",
-          "gameBackground": "./assets/minions/themes/classic/bg-game-classic.png"
-        }
+        { "id": "classic", "name": "Classic" },
+        { "id": "adventure", "name": "Adventure" },
+        { "id": "007", "name": "007" }
       ]
     },
     {
       "id": "simpsons",
       "name": "Simpsons",
-      "cardsPath": "./assets/simpsons/cards/",
-      "themes": []
+      "cards": ["1", "2", "3", "4", "5", "6", "7", "8"],
+      "themes": [
+        { "id": "springfield", "name": "Springfield" },
+        { "id": "bartmania", "name": "Bartmania" }
+      ]
+    },
+    {
+      "id": "mario",
+      "name": "Mario Bros",
+      "cards": ["1", "2", "3", "4", "5", "6", "7", "8"],
+      "themes": [
+        { "id": "classic", "name": "Classic" },
+        { "id": "bowser", "name": "Bowser's Castle" }
+      ]
     }
   ]
 }

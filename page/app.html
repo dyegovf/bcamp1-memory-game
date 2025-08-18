@@ -1,4 +1,37 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory-Game</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/app.css" />
+
+    <!-- Script principal -->
+    <script type="module" src="../js/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- Cabeçalho do jogo -->
+      <header class="game-header">
+        <div class="player-info">Jogador: <span class="player">...</span></div>
+        <div class="timer-info">Tempo: <span class="timer">00:00</span></div>
+        <button id="restart-btn" class="restart-button" title="Reiniciar jogo">
+          🔁 Reiniciar
+        </button>
+      </header>
+
+      <!-- Área do jogo -->
+      <section id="screen" class="game-grid">
+        <!-- Cartas serão injetadas dinamicamente -->
+      </section>
+    </main>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,4 +51,4 @@
       <button id="restart-btn">🔁 Restart Game</button>
     </main>
   </body>
-</html>
+</html> -->
