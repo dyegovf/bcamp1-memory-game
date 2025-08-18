@@ -3,7 +3,6 @@ main {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background-image: url("../img/minions/bg-game2.png");
   background-size: 200px;
   background-repeat: repeat;
   align-items: center;
@@ -79,7 +78,6 @@ main {
 
 .back {
   backface-visibility: hidden;
-  background-image: url("../img/minions/back-card.png");
 }
 
 .reveal-card {

@@ -27,15 +27,15 @@
   right: 20px;
 }
 
-/* .login-section {
+.login-section {
   display: flex;
   flex: 1;
-} */
+}
 
-/* .theme-section {
+.theme-section {
   display: flex;
   flex: 3;
-} */
+}
 
 /*Formulário de login */
 .login-form {
