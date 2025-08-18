@@ -161,7 +161,7 @@ window.onload = async () => {
         localStorage.setItem("theme", "classic");
       }
 
-      window.location.href = "./page/app.html";
+      window.location.href = "page/app.html";
     } else {
       alert("Please enter a valid username with at least 3 characters.");
     }
