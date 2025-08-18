@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="../css/app.css" />
 
     <!-- Script principal -->
+
+    <script>
+      // Get the current URL
+      const url = window.location.href;
+
+      // Check if the URL is on GitHub Pages
+      if (url.includes("github.io")) {
+        // Get the repository name from the URL
+        const repoName = url.split("/")[3]; // e.g., 'my-project' from 'https://myuser.github.io/my-project/'
+        document.write(`<base href="/${repoName}/">`);
+      } else {
+        // For local development, use the root of the local server
+        document.write(`<base href="/">`);
+      }
+    </script>
     <script type="module" src="../js/app.js" defer></script>
   </head>
   <body>
