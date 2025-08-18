@@ -3,7 +3,7 @@ main {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  background-size: 200px;
+  background-size: 100px;
   background-repeat: repeat;
   align-items: center;
   justify-content: center;
