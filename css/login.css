@@ -217,6 +217,14 @@
   background-color: #555;
 }
 
+.theme-btn.selected,
+.difficulty-btn.selected {
+  border: 2px solid #ff9800;
+  background-color: #fff3e0;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+}
+
 /*Botões de tema */
 
 /* .theme-btn {

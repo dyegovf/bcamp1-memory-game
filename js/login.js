@@ -77,6 +77,10 @@ const createModal = async () => {
     btn.addEventListener("click", () => {
       localStorage.setItem("difficulty", item.level);
       localStorage.setItem("cards", item.cards);
+      document
+        .querySelectorAll(".difficulty-btn")
+        .forEach((b) => b.classList.remove("selected"));
+      btn.classList.add("selected");
     });
 
     difficultySection.appendChild(btn);
@@ -106,26 +110,13 @@ const createModal = async () => {
 
         const img = document.querySelector(".login-header img");
         img.src = `assets/memory-games/${group.id}/themes/${theme.id}/login-${theme.id}.png`;
+        document
+          .querySelectorAll(".theme-btn")
+          .forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
       });
 
       themeSection.appendChild(btn);
-
-      console.log("Criando botão de tema:", group.name, theme.name);
-
-      console.log(difficultyData);
-
-      // setTimeout(() => {
-      //   const selectedBtn = document.querySelector("[data-group]");
-      //   const specSelectedBtn = document.querySelector("[data-theme]");
-      //   console.log(selectedBtn);
-      // }, 0);
-
-      // setTimeout(() => {
-      //   const allThemeBtns = document.querySelectorAll("[data-group]");
-      //   allThemeBtns.forEach((btn) => {
-      //     console.log(btn.dataset.group, btn.dataset.theme);
-      //   });
-      // }, 0);
     });
   });
 
@@ -133,6 +124,27 @@ const createModal = async () => {
   modalContent.appendChild(themeSection);
   modal.appendChild(closeButton);
   modal.appendChild(modalContent);
+
+  setTimeout(() => {
+    const lsGroup = localStorage.getItem("group");
+    const lsTheme = localStorage.getItem("theme");
+    const lsDifficulty = localStorage.getItem("difficulty");
+
+    // Destacar botão de tema com .selected
+    const themeBtns = document.querySelectorAll(".theme-btn");
+    themeBtns.forEach((btn) => {
+      const isSelected =
+        btn.dataset.group === lsGroup && btn.dataset.theme === lsTheme;
+      btn.classList.toggle("selected", isSelected);
+    });
+
+    // Destacar botão de dificuldade com .selected
+    const difficultyBtns = document.querySelectorAll(".difficulty-btn");
+    difficultyBtns.forEach((btn) => {
+      const isSelected = btn.dataset.level === lsDifficulty;
+      btn.classList.toggle("selected", isSelected);
+    });
+  }, 100); // tempo para garantir que os botões foram renderizados
 
   return modal;
 };
