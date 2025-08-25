@@ -130,21 +130,21 @@ const createModal = async () => {
     const lsTheme = localStorage.getItem("theme");
     const lsDifficulty = localStorage.getItem("difficulty");
 
-    // Destacar botão de tema com .selected
     const themeBtns = document.querySelectorAll(".theme-btn");
     themeBtns.forEach((btn) => {
       const isSelected =
         btn.dataset.group === lsGroup && btn.dataset.theme === lsTheme;
       btn.classList.toggle("selected", isSelected);
+      // console.log(btn.dataset.group, btn.dataset.theme, lsGroup, lsTheme);
+      // console.log("isSelected:", isSelected);
     });
 
-    // Destacar botão de dificuldade com .selected
     const difficultyBtns = document.querySelectorAll(".difficulty-btn");
     difficultyBtns.forEach((btn) => {
       const isSelected = btn.dataset.level === lsDifficulty;
       btn.classList.toggle("selected", isSelected);
     });
-  }, 100); // tempo para garantir que os botões foram renderizados
+  }, 100);
 
   return modal;
 };
